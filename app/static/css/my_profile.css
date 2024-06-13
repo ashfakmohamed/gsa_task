@@ -1,0 +1,101 @@
+/* <!-- app>statics>my_profile.css --> */
+
+
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(to right, #ff7e5f, #feb47b);
+
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	background-color: #f0f0f0;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	margin-left: 20px;
+}
+
+.logo img {
+	width: 130px;
+	height: 70px;
+}
+
+.add-task-btn {
+	margin-right: 20px;
+}
+
+.add-task-btn button {
+	background-color: #4651ec;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.add-task-btn button:hover {
+	background-color: #313693;
+}
+
+.sidebar {
+	background-color: white;
+	padding: 20px;
+	width: 100px;
+    height:100vh;
+	position: fixed;
+	top: 100;
+	left: 0;
+}
+
+.sidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar li {
+	margin-bottom: 10px;
+}
+
+.sidebar a {
+	text-decoration: none;
+	color: #333;
+}
+
+.sidebar a:hover {
+	color: #4CAF50;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.profile-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-card p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #555;
+}
+
+.profile-card .profile-label {
+    font-weight: bold;
+    color: #333;
+}

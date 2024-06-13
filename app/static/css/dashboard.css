@@ -1,0 +1,120 @@
+/* <!-- app>statics>dashboard.css --> */
+
+body {
+	font-family: Arial, sans-serif;
+	background: linear-gradient(to right, #ff7e5f, #feb47b);
+
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	background-color: #f0f0f0;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	margin-left: 20px;
+}
+
+.logo img {
+	width: 130px;
+	height: 70px;
+}
+
+.add-task-btn {
+	margin-right: 20px;
+}
+
+.add-task-btn button {
+	background-color: #4651ec;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.add-task-btn button:hover {
+	background-color: #313693;
+}
+
+.sidebar {
+	background-color: white;
+	padding: 20px;
+	width: 100px;
+	height:100vh;
+	position: fixed;
+	top: 100;
+	left: 0;
+}
+
+.sidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar li {
+	margin-bottom: 10px;
+}
+
+.sidebar a {
+	text-decoration: none;
+	color: #333;
+}
+
+.sidebar a:hover {
+	color: #4CAF50;
+}
+
+.main-content {
+	margin-left: 150px;
+	padding: 20px;
+	margin-top:50px;
+	
+}
+
+#task-table {
+	width: 90%;
+	border-collapse: collapse;
+}
+
+#task-table th, #task-table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: left;
+}
+
+#task-table th {
+	/* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+}
+
+.my_btn{
+	margin-top:50px;
+	justify-content: center;
+	align-items: center;
+	display:flex;
+}
+
+.my_btn a{
+	margin-right:70px;
+
+}
+
+.my_btn a button{
+	border-radius: 5px;
+	border: none;
+	color: white;	
+	padding: 10px 20px;
+	background-color: #f42020;
+
+}
+
+.my_btn a button:hover{
+	background-color: #ab1e1e;
+
+}

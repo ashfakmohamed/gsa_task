@@ -1,0 +1,40 @@
+<!-- app>templates>my_profile.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="{% static 'css/my_profile.css' %}">
+</head>
+<body>
+    <div class="header">
+		<div class="logo">
+			<img src="{% static 'image/GSA-Logo.jpg' %}" alt="Logo">
+		</div>
+		<div class="add-task-btn">
+			<a href="{% url 'task' %}"><button>Add Task</button></a>
+		</div>
+	</div>
+
+	<div class="sidebar">
+		<ul>
+			<li><a href="{% url 'dashboard' %}">My Tasks</a></li>
+			<li><a href="{% url 'my_profile' %}">My Profile</a></li>
+		</ul>
+	</div>
+	
+    <h1>My Profile</h1>
+    <center>
+    <div class="profile-card">
+        
+        <p><span class="profile-label">Name:</span> {{ value.name }}</p>
+        <p><span class="profile-label">Email:</span> {{ value.email }}</p>
+        <p><span class="profile-label">Mobile No:</span> {{ value.mobile_number }}</p>
+        <p><span class="profile-label">Address:</span> {{ value.address }}</p>
+    </div>
+</center>
+</body>
+</html>

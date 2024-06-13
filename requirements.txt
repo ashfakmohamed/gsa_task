@@ -1,0 +1,125 @@
+Django==5.0.6
+geopy==2.3.0
+
+
+Requirements
+Django Framework:
+
+Utilize Django 5.0.6 for the web application framework.
+Database:
+
+Use SQLite as the database (db.sqlite3).
+Models:
+
+User:
+Fields: name, email, mobile_number, password, address, latitude, longitude.
+Task:
+Fields: name, date, time, assigned_to, status, latitude, longitude.
+Views:
+
+register:
+Register a new user.
+Geocode the address to get latitude and longitude.
+login:
+Authenticate a user.
+Store the email in session.
+dashboard:
+Display all tasks.
+add_task:
+Add a new task.
+Geocode the address to get latitude and longitude.
+Determine the status based on the date.
+my_profile:
+Display the user's profile based on the session email.
+Templates:
+
+register.html: Registration form for new users.
+login.html: Login form for users.
+dashboard.html: Display tasks.
+task.html: Form to add a new task.
+my_profile.html: Display user profile.
+Static Files:
+
+Serve static files from app/static.
+Dependencies:
+
+Django==5.0.6
+geopy==2.3.0
+Deliverables
+Django Project Structure:
+
+Complete Django project with necessary configurations.
+Properly set up settings including SECRET_KEY, DEBUG, ALLOWED_HOSTS, and other configurations.
+Models:
+
+User and Task models as specified in models.py.
+Views:
+
+Functional views to handle user registration, login, task management, and profile display.
+Templates:
+
+HTML templates for user interactions.
+Static Files:
+
+Directory structure for serving static files.
+Geocoding Integration:
+
+Use geopy for geocoding addresses in user registration and task creation.
+Authentication and Session Management:
+
+Basic user authentication and session management for profile and task handling.
+
+Step-by-Step Guide
+1. Install Python
+Ensure Python is installed on your system. You can download it from python.org.
+
+Create a virtual environment:
+
+py -m venv .env
+
+Activate the Virtual Environment
+Activate the virtual environment:
+
+Windows:
+.env\Scripts\activate
+
+Install Django and Other Dependencies
+With the virtual environment activated, install Django and geopy:
+
+pip install Django==5.0.6 geopy==2.3.0
+
+etup the Django Project
+If you haven't already, create a new Django project:
+django-admin startproject task_schedule
+Navigate into the project directory:
+
+cd task_schedule
+Create a Django App
+Create a new Django app within your project:
+python manage.py startapp app
+Configure settings.py
+In task_schedule/settings.py, add your app to INSTALLED_APPS and set up other configurations as described in the provided code.
+
+10. Create Models
+Define your models in app/models.py as provided in your code.
+
+11. Create Views
+Set up your views in app/views.py as provided in your code.
+
+12. Create Templates
+Create the necessary HTML templates in app/templates.
+
+13. Run Migrations
+Apply migrations to set up the database:
+python manage.py makemigrations
+
+python manage.py migrate
+
+Run the Development Server
+
+Start the Django development server:
+
+python manage.py runserver
+
+You should see output indicating the server is running. 
+You can now navigate to http://127.0.0.1:8000 in your web browser to see your Django project in action.
