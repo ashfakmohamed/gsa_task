@@ -1,11 +1,12 @@
 from django.urls import path
-from .views import login,register,dashboard,add_task,my_profile
+
+from . import views
 
 urlpatterns = [
-    path('login/',login,name='login'),
-    path('register/',register,name='register'),
-    path('task/',add_task,name='task'),
-    path('dashboard/',dashboard,name='dashboard'),
-    path('my_profile',my_profile,name='my_profile')
+    path("login/", views.login, name="login"),
+    path("register/", views.register, name="register"),
+    path("logout/", views.logout, name="logout"),
+    path("tasks/new/", views.add_task, name="task"),
+    path("dashboard/", views.dashboard, name="dashboard"),
+    path("profile/", views.my_profile, name="my_profile"),
 ]
-

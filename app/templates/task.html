@@ -1,24 +1,21 @@
-<!-- app>templates>task.html -->
-
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Form</title>
+    <title>Add task</title>
     <link rel="stylesheet" href="{% static 'css/task.css' %}">
 </head>
 <body>
-    <form action="{% url 'task' %}" method="post">
-        {% csrf_token %}
-        <label for="name">Task Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="date_time">Date and Time:</label>
-        <input type="datetime-local" id="date_time" name="date_time"><br><br>
-        <label for="assigned_to">Assigned To:</label>
-        <input type="text" id="assigned_to" name="assigned_to"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <main>
+        <h1>Add task</h1>
+        <form action="{% url 'task' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save task</button>
+        </form>
+        <p><a href="{% url 'dashboard' %}">Back to dashboard</a></p>
+    </main>
 </body>
 </html>

@@ -1,54 +1,57 @@
-<!-- app>templates>dashboard.html -->
-
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Task Management System</title>
-	<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 <body>
-	<div class="header">
-		<div class="logo">
-			<img src="{% static 'image/GSA-Logo.jpg' %}" alt="Logo">
-		</div>
-		<div class="add-task-btn">
-			<a href="{% url 'task' %}"><button>Add Task</button></a>
-		</div>
-	</div>
+    <header class="header">
+        <div class="logo"><img src="{% static 'image/GSA-Logo.jpg' %}" alt="GSA"></div>
+        <div class="add-task-btn"><a href="{% url 'task' %}">Add task</a></div>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+        </form>
+    </header>
 
-	<div class="sidebar">
-		<ul>
-			<li><a href="{% url 'dashboard' %}">My Tasks</a></li>
-			<li><a href="{% url 'my_profile' %}">My Profile</a></li>
-		</ul>
-	</div>
-	
-	<div class="main-content">
-		<table id="task-table">
-			<thead>
-				<tr>
-					<th>Task Name</th>
-					<th>Date</th>
-					<th>Time</th>
-					<th>Assigned By</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for task in tasks %}
-					<tr>
-						<td>{{task.name}}</td>
-						<td>{{task.date}}</td>
-						<td>{{task.time}}</td>
-						<td>{{task.assigned_to}}</td>
-						<td>{{task.status}}</td>
-					</tr>
-				{% endfor %}
-				<!-- Add more tasks here -->
-			</tbody>
-		</table>
-	</div>
-	
+    <nav class="sidebar" aria-label="Account navigation">
+        <ul>
+            <li><a href="{% url 'dashboard' %}">My tasks</a></li>
+            <li><a href="{% url 'my_profile' %}">My profile</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        {% if messages %}
+            {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
+        {% endif %}
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>Task name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Assigned to</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.name }}</td>
+                        <td>{{ task.date }}</td>
+                        <td>{{ task.time }}</td>
+                        <td>{{ task.assigned_to }}</td>
+                        <td>{{ task.get_status_display }}</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="5">No tasks yet.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
 </body>
 </html>
