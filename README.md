@@ -1,4 +1,9 @@
-# GSA Task Scheduler
+# Django Task Scheduler
+
+<!-- profile-upgrade -->
+[![Django CI](https://github.com/ashfakmohamed/django-task-scheduler/actions/workflows/ci.yml/badge.svg)](https://github.com/ashfakmohamed/django-task-scheduler/actions/workflows/ci.yml)
+
+**Stack:** Python · Django · Geocoding
 
 A Django task scheduling application with authenticated user accounts, private task dashboards, profile details, and optional address geocoding.
 
@@ -31,3 +36,10 @@ A Django task scheduling application with authenticated user accounts, private t
 
     python manage.py test
     python manage.py check
+
+## Engineering quality
+
+- GitHub Actions runs Django checks and the automated test suite on every push.
+- Runtime configuration is documented through `.env.example`; secrets are not committed.
+- Local databases, uploaded media, caches, and virtual environments are excluded from version control.
+- Security-sensitive behavior and authorization rules are documented above.
